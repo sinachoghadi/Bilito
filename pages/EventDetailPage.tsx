@@ -7,7 +7,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 interface EventDetailPageProps {
   eventId: string;
-  onNavigate: (page: string, id?: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
 export function EventDetailPage({ eventId, onNavigate }: EventDetailPageProps) {

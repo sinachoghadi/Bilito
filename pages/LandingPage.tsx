@@ -4,7 +4,7 @@ import { mockEvents } from '../data/mockData';
 import { Calendar, Heart, Shield, Sparkles } from 'lucide-react';
 
 interface LandingPageProps {
-  onNavigate: (page: string, id?: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
 export function LandingPage({ onNavigate }: LandingPageProps) {

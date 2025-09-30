@@ -9,7 +9,14 @@ import { UserDashboard } from './pages/UserDashboard';
 import { AdminPanel } from './pages/AdminPanel';
 import { Toaster } from './components/ui/sonner';
 
-type Page = 'home' | 'events' | 'event-detail' | 'seat-selection' | 'dashboard' | 'admin' | 'login';
+export type Page =
+  | "home"
+  | "events"
+  | "event-detail"
+  | "seat-selection"
+  | "dashboard"
+  | "admin"
+  | "login";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -19,6 +26,8 @@ export default function App() {
     setCurrentPage(page);
     if (eventId) {
       setSelectedEventId(eventId);
+    } else if (page !== 'event-detail' && page !== 'seat-selection') {
+      setSelectedEventId(null);
     }
   };
 

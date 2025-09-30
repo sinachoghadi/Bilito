@@ -7,7 +7,7 @@ import { Alert, AlertDescription } from '../components/ui/alert';
 
 interface SeatSelectionPageProps {
   eventId: string;
-  onNavigate: (page: string, id?: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
 type SeatStatus = 'available' | 'selected' | 'booked';

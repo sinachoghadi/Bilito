@@ -9,7 +9,7 @@ import { Calendar, Heart, MapPin, Settings, Ticket, User } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 interface UserDashboardProps {
-  onNavigate: (page: string, id?: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
 export function UserDashboard({ onNavigate }: UserDashboardProps) {

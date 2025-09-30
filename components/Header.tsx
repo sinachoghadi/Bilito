@@ -3,10 +3,10 @@ import { Calendar, LayoutDashboard, LogIn, Ticket } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
-  onNavigate: (page: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header({ onNavigate }: HeaderProps) {
   return (
     <header className="border-b bg-white sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
@@ -15,7 +15,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           <nav className="flex items-center gap-6">
             <Button
               variant="ghost"
-              onClick={() => onNavigate('login')}
+              onClick={() => onNavigate("login")}
               className="gap-2"
             >
               <span>ورود</span>
@@ -23,7 +23,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             </Button>
             <Button
               variant="ghost"
-              onClick={() => onNavigate('dashboard')}
+              onClick={() => onNavigate("dashboard")}
               className="gap-2"
             >
               <span>داشبورد</span>
@@ -31,7 +31,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             </Button>
             <Button
               variant="ghost"
-              onClick={() => onNavigate('events')}
+              onClick={() => onNavigate("events")}
               className="gap-2"
             >
               <span>رویدادها</span>
@@ -41,7 +41,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
 
           {/* Logo - Left side in RTL */}
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => onNavigate("home")}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <h1 className="text-primary">بلیتو</h1>

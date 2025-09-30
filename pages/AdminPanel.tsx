@@ -11,8 +11,12 @@ import {
   TableHeader,
   TableRow,
 } from '../components/ui/table';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import { Badge } from '../components/ui/badge';
 import { mockEvents, mockVenues, mockShowtimes, formatPrice, persianNumbers } from '../data/mockData';
 import {
@@ -114,7 +118,7 @@ function OverviewTab() {
   return (
     <div className="space-y-6">
       <h1>داشبورد</h1>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -149,9 +153,7 @@ function OverviewTab() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl">{persianNumbers(mockEvents.length)}</div>
-            <p className="text-xs text-muted-foreground">
-              در این ماه
-            </p>
+            <p className="text-xs text-muted-foreground">در این ماه</p>
           </CardContent>
         </Card>
 
@@ -183,12 +185,20 @@ function OverviewTab() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {mockEvents.slice(0, 5).map((event, index) => (
+              {mockEvents.slice(0, 5).map((event) => (
                 <TableRow key={event.id}>
-                  <TableCell>{persianNumbers(Math.floor(Math.random() * 500) + 100)}</TableCell>
                   <TableCell>
-                    <Badge className={event.type === 'concert' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}>
-                      {event.type === 'concert' ? 'کنسرت' : 'تئاتر'}
+                    {persianNumbers(Math.floor(Math.random() * 500) + 100)}
+                  </TableCell>
+                  <TableCell>
+                    <Badge
+                      className={
+                        event.type === "concert"
+                          ? "bg-purple-100 text-purple-700"
+                          : "bg-blue-100 text-blue-700"
+                      }
+                    >
+                      {event.type === "concert" ? "کنسرت" : "تئاتر"}
                     </Badge>
                   </TableCell>
                   <TableCell>{event.title}</TableCell>

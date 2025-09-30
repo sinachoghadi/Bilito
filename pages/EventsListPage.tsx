@@ -15,7 +15,7 @@ import {
 } from '../components/ui/pagination';
 
 interface EventsListPageProps {
-  onNavigate: (page: string, id?: string) => void;
+  onNavigate: (page: import("../App").Page, id?: string) => void;
 }
 
 export function EventsListPage({ onNavigate }: EventsListPageProps) {
